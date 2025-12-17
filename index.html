@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEM Lesson Page</title>
+</head>
+<body>
+  <!-- Header блок -->
+  <header class="header">
+    <div class="header__logo">Logo</div>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link header__nav-link--active">Головна</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Про нас</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Контакти</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="header__button header__button--menu">Меню</button>
+  </header>
+
+  <!-- Main content з card блоками -->
+  <main class="main">
+    <section class="hero">
+      <h1 class="hero__title">Вивчаємо BEM</h1>
+      <p class="hero__text">Теорія, експерименти та практика HTML з класами.</p>
+      <button class="hero__button hero__button--primary">Почати</button>
+    </section>
+
+    <div class="cards">
+      <article class="card card--featured">
+        <img src="image1.jpg" alt="Картинка 1" class="card__image">
+        <div class="card__content">
+          <h2 class="card__title">Карта 1</h2>
+          <p class="card__text">Опис карти з BEM класами.</p>
+        </div>
+        <footer class="card__footer">
+          <button class="card__button card__button--secondary">Детальніше</button>
+        </footer>
+      </article>
+
+      <article class="card">
+        <img src="image2.jpg" alt="Картинка 2" class="card__image">
+        <div class="card__content">
+          <h2 class="card__title">Карта 2</h2>
+          <p class="card__text">Друга карта для експериментів.</p>
+        </div>
+        <footer class="card__footer">
+          <button class="card__button">Читати</button>
+        </footer>
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer блок -->
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2025 BEM Lesson</p>
+  </footer>
+</body>
+</html>
