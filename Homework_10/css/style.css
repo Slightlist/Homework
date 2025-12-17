@@ -1,0 +1,124 @@
+body {
+  background: #f4f4f4;
+  color: #333;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 200vh;
+  padding: 20px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background: #333;
+  color: white;
+  padding: 1rem;
+  z-index: 100;
+  margin-bottom: 20px;
+}
+
+.header__nav {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header__menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.header__menu-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+.header__menu-item {
+  position: relative;
+}
+
+.header__submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #444;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.header__submenu-item:hover .header__submenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header__submenu-link {
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  display: block;
+}
+
+.header__sub-submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #555;
+  min-width: 180px;
+}
+
+.main {
+  padding: 40px 0;
+}
+
+.card {
+  position: relative;
+  max-width: 300px;
+  background: white;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.card__image-container {
+  position: relative;
+  height: 200px;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover .card__overlay {
+  opacity: 1;
+}
+
+.card__title {
+  padding: 20px;
+  font-size: 1.2em;
+}

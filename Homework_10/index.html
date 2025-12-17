@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 10 - Position + BEM</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">Головна</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">Послуги</a>
+            <ul class="header__submenu">
+              <li class="header__submenu-item">
+                <a href="#" class="header__submenu-link">Дизайн</a>
+                <ul class="header__sub-submenu">
+                  <li class="header__sub-submenu-item">
+                    <a href="#" class="header__sub-submenu-link">UI Дизайн</a>
+                  </li>
+                  <li class="header__sub-submenu-item">
+                    <a href="#" class="header__sub-submenu-link">UX Дизайн</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header__submenu-item">
+                <a href="#" class="header__submenu-link">Розробка</a>
+              </li>
+            </ul>
+          </li>
+          <li class="header__menu-item">
+            <a href="#" class="header__menu-link">Контакти</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <h1 style="text-align: center; margin-bottom: 40px;">Тест Position + BEM</h1>
+      
+      <article class="card">
+        <div class="card__image-container">
+          <div>Зображення (200pxx200px)</div>
+          <div class="card__overlay">Hover тут!</div>
+        </div>
+        <h2 class="card__title">Карта з Overlay</h2>
+        <p style="padding: 0 20px 20px;">Position: relative (контейнер) + absolute (overlay)</p>
+      </article>
+
+      <p style="text-align: center; margin: 100px 0; font-size: 18px; color: #666;">
+        Прокрутіть вниз - header липкий (sticky)!<br>
+        Наведіть на "Послуги" - меню 3 рівня!
+      </p>
+    </main>
+  </div>
+</body>
+</html>
