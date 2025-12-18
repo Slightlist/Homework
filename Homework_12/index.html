@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Porsche - Трикутник прикріплений</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      background: linear-gradient(to bottom, #87CEEB 0%, #A8E6CF 50%, #74B9FF 100%);
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    .sky { position: absolute; top: 0; width: 100%; height: 400px; overflow: hidden; }
+    .cloud {
+      position: absolute; background: rgba(255,255,255,0.9); border-radius: 50px;
+      animation: cloudFloat 15s linear infinite;
+    }
+    .cloud--small { width: 60px; height: 30px; top: 60px; left: -80px; animation-duration: 12s; }
+    .cloud--small:nth-child(2) { top: 120px; left: -100px; animation-duration: 10s; animation-delay: 3s; }
+    .cloud--medium { width: 100px; height: 45px; top: 200px; left: -120px; animation-duration: 18s; animation-delay: 6s; }
+    .cloud--large { width: 150px; height: 70px; top: 80px; left: -180px; animation-duration: 25s; animation-delay: 9s; }
+    
+    .sun {
+      position: absolute; top: 80px; right: -100px; width: 120px; height: 120px;
+      background: radial-gradient(circle, #FFD700 0%, #FFA500 70%, #FF8C00 100%);
+      border-radius: 50%; box-shadow: 0 0 50px #FFD700;
+      animation: sunSpin 8s linear infinite;
+    }
+    
+    .road {
+      position: absolute; bottom: 0; width: 300%; height: 250px;
+      background: repeating-linear-gradient(90deg, #333 0px, #333 50px, #fff 50px, #fff 80px);
+      animation: roadMove 3s linear infinite;
+    }
+    
+    .car {
+      position: absolute; bottom: 280px; left: -350px;
+      animation: carDrive 5s linear infinite;
+    }
+    
+    /* ✅ ОСНОВНИЙ КУЗОВ */
+    .car__body {
+      position: absolute;
+      width: 400px; height: 80px;
+      background: linear-gradient(135deg, #c62828 0%, #d32f2f 30%, #b71c1c 70%, #ad1457 100%);
+      border-radius: 150px 40px 40px 130px;
+      top: 50px; left: 0;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    }
+    
+    /* ✅ ✅ ТРИКУТНИК ПРИКРИПЛЕНИЙ ДО КУЗОВА СПЕРЕДУ */
+    .car__triangle {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 70px solid transparent;
+      border-right: 70px solid transparent;
+      border-bottom: 60px solid #a52714; /* ТІ САМІ КОЛЬОРИ КУЗОВА */
+      top: 85px; 
+	  transform: rotate(220deg);
+      left: 355px; /* ✅ ПРИКРИПЛЕНИЙ ДО ЛІВОГО КРАЮ КУЗОВА */
+      z-index: 2;
+      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4));
+    }
+    
+    /* ДАХ */
+    .car__roof {
+      position: absolute;
+      width: 230px; height: 58px;
+      background: linear-gradient(45deg, #212121, #424242);
+      border-radius: 35px 35px 25px 25px;
+      top: 8px; left: 50px;
+      box-shadow: inset 0 3px 8px rgba(0,0,0,0.4);
+    }
+	
+    /* Колеса */
+    .wheel {
+      position: absolute;
+      width: 85px; height: 85px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 25% 25%, #1e1e1e 0%, #333 50%, #111 100%);
+      border: 16px solid #0a0a0a;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+    }
+    .wheel--front-left { left: 350px; top: 100px; animation: wheelSpin 0.8s linear infinite; }
+    .wheel--front-right { right: -360px; top: 100px; animation: wheelSpin 0.8s linear infinite reverse; }
+    .wheel--rear-left { left: 10px; top: 100px; animation: wheelSpin 1s linear infinite; }
+    .wheel--rear-right { right: -150px; top: 100px; animation: wheelSpin 1s linear infinite reverse; }
+    
+    /* Фари */
+    .headlight {
+      position: absolute;
+      width: 35px; height: 32px;
+      background: radial-gradient(circle, #fff 0%, #ffd700 50%, #ffaa00 100%);
+      border-radius: 70% 50% 70% 40%;
+      box-shadow: 0 0 45px #ffd700;
+      top: 32px;
+	  right: 500px;
+    }
+    
+    .headlight--right { right: -400px; top: 52px; transform: skewY(12deg); }
+    
+   
+    
+    /* Анімації */
+    @keyframes roadMove { 0% { transform: translateX(0); } 100% { transform: translateX(-33.33%); } }
+    @keyframes cloudFloat { 0% { transform: translateX(-150px); } 100% { transform: translateX(1200px); } }
+    @keyframes sunSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes carDrive {
+      0% { left: -350px; transform: translateY(0) rotate(0); }
+      25% { left: 150px; transform: translateY(-10px) rotate(-1deg); }
+      50% { left: 550px; transform: translateY(-18px) rotate(1deg); }
+      75% { left: 850px; transform: translateY(-10px) rotate(-0.5deg); }
+      100% { left: 1150px; transform: translateY(0) rotate(0); }
+    }
+    @keyframes wheelSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="sky">
+    <div class="cloud cloud--small"></div>
+    <div class="cloud cloud--small"></div>
+    <div class="cloud cloud--medium"></div>
+    <div class="cloud cloud--large"></div>
+  </div>
+  <div class="sun"></div>
+  <div class="road"></div>
+  
+  <div class="car">
+    <!-- ✅ ОСНОВНИЙ КУЗОВ -->
+    <div class="car__body"></div>
+    
+    <!-- ✅ ✅ ТРИКУТНИК ПРИКРИПЛЕНИЙ СПЕРЕДУ -->
+    <div class="car__triangle"></div>
+    
+    <div class="car__roof"></div>
+	<div class="car__roof"></div>
+    
+    <div class="wheel wheel--front-left"></div>
+    <div class="wheel wheel--front-right"></div>
+    <div class="wheel wheel--rear-left"></div>
+    <div class="wheel wheel--rear-right"></div>
+    
+    
+    <div class="headlight headlight--right"></div>
+    
+    <div class="mirror mirror--left"></div>
+    <div class="mirror mirror--right"></div>
+  </div>
+</body>
+</html>
