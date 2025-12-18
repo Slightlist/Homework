@@ -1,0 +1,123 @@
+body {
+  background: linear-gradient(to bottom, #87CEEB 0%, #98D8C8 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+}
+
+.scene {
+  position: relative;
+  width: 800px;
+  height: 400px;
+}
+
+.car {
+  position: absolute;
+  bottom: 50px;
+  left: -200px;
+  animation: drive 4s linear infinite;
+}
+
+/* ОСНОВНИЙ КОРПУС */
+.car__body {
+  position: absolute;
+  width: 300px;
+  height: 100px;
+  background: linear-gradient(45deg, #ff4757, #ff6b9d);
+  border-radius: 50px 20px 20px 50px;
+  top: 50px;
+  left: 50px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.car__roof {
+  position: absolute;
+  width: 120px;
+  height: 70px;
+  background: #3742fa;
+  border-radius: 20px 20px 10px 10px;
+  top: 10px;
+  right: -20px;
+  transform: skew(-10deg);
+}
+
+/* БАГАЖНИК */
+.car__trunk {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  background: #2ed573;
+  border-radius: 0 0 30px 30px;
+  bottom: -30px;
+  right: 20px;
+  transform: rotate(5deg);
+}
+
+/* КОЛЕСА */
+.car__wheel {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: #2f3542;
+  border-radius: 50%;
+  border: 10px solid #57606f;
+  top: 110px;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.car__wheel--front-left {
+  left: 60px;
+  transform: translate(-50%, -50%) rotate(-10deg);
+}
+
+.car__wheel--front-right {
+  right: 60px;
+  transform: translate(-50%, -50%) rotate(10deg);
+}
+
+.car__wheel--rear-left {
+  left: 180px;
+  transform: translate(-50%, -50%) rotate(-5deg);
+}
+
+.car__wheel--rear-right {
+  right: 180px;
+  transform: translate(-50%, -50%) rotate(5deg);
+}
+
+/* ФАРИ */
+.car__headlight {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #feca57;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #ffeaa7;
+  top: 30px;
+}
+
+.car__headlight--left {
+  left: 120px;
+  transform: skewY(-15deg);
+}
+
+.car__headlight--right {
+  right: 120px;
+  transform: skewY(15deg);
+}
+
+/* ДВИЖЕННЯ */
+@keyframes drive {
+  0% { left: -200px; transform: translateY(0px) rotateY(0deg); }
+  50% { left: 300px; transform: translateY(-10px) rotateY(2deg); }
+  100% { left: 900px; transform: translateY(0px) rotateY(0deg); }
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

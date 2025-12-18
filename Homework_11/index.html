@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Спортивний Автомобіль - ФІНАЛЬНА версія</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(to bottom, #87CEEB 0%, #98D8C8 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .scene { position: relative; width: 900px; height: 500px; }
+    .car {
+      position: absolute;
+      bottom: 80px;
+      left: -250px;
+      animation: drive 5s linear infinite;
+    }
+    
+    /* ОСНОВНИЙ КОРПУС */
+    .car__body {
+      position: absolute;
+      width: 380px;
+      height: 90px;
+      background: linear-gradient(135deg, #e74c3c, #f39c12);
+      border-radius: 80px 30px 30px 80px;
+      top: 60px;
+      left: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    
+    /* ДАХ */
+    .car__roof {
+      position: absolute;
+      width: 160px;
+      height: 70px;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      border-radius: 30px 30px 20px 20px;
+      top: 20px;
+      left: 70px;
+      transform: skewX(-12deg);
+    }
+    
+    /* БАГАЖНИК - ЗАДНІЙ СПЙЛЕР (НЕ ПЛУТАЄ) */
+    .car__trunk {
+      position: absolute;
+      width: 120px;
+      height: 35px;     /* Тонший спойлер */
+      background: #cec9ca;  /* Не зелений - рожевий */
+      border-radius: 0 0 25px 25px;
+      bottom: -95px;    /* Прикріплений до кузова */
+      left: 235px;      /* Точно ззаду */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    /* КОЛЕСА */
+    .car__wheel {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      background: conic-gradient(#2c3e50, #34495e, #2c3e50);
+      border-radius: 50%;
+      border: 12px solid #1a252f;
+      top: 135px;
+      animation: spin 1.2s linear infinite;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+    .car__wheel--front-left { left: 90px; transform: translate(-50%, -50%) rotate(-8deg); }
+    .car__wheel--front-right { left: 290px; transform: translate(-50%, -50%) rotate(8deg); }
+    .car__wheel--rear-left { left: 150px; transform: translate(-50%, -50%) rotate(-4deg); }
+    .car__wheel--rear-right { left: 350px; transform: translate(-50%, -50%) rotate(4deg); }
+    
+    /* ФАРИ - НА ПЕРЕДНІЙ ЧАСТИНІ АВТО */
+    .car__headlight {
+      position: absolute;
+      width: 35px;
+      height: 30px;
+      background: radial-gradient(circle, #f1c40f, #f39c12);
+      border-radius: 60% 40% 60% 40%;
+      box-shadow: 0 0 30px #f39c12;
+      top: 35px;
+      z-index: 20;
+    }
+    .car__headlight--left { 
+      left: 380px;      /* ЛІВА ФАРА - ПОПЕРЕДУ */
+	  top: 55px;
+      transform: skewY(-10deg);
+    }
+    .car__headlight--right { 
+      left: 220px;      /* ПРАВА ФАРА - ПОПЕРЕДУ (зміщена) */
+      top: 55px;
+      transform: skewY(10deg) translateX(160px);
+    }
+    
+    /* АНІМАЦІЇ */
+    @keyframes drive {
+      0% { left: -250px; transform: translateY(0) rotate(0deg); }
+      25% { left: 100px; transform: translateY(-8px) rotate(-1deg); }
+      50% { left: 400px; transform: translateY(-12px) rotate(1deg); }
+      75% { left: 700px; transform: translateY(-8px) rotate(-1deg); }
+      100% { left: 950px; transform: translateY(0) rotate(0deg); }
+    }
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="car">
+      <div class="car__body"></div>
+      <div class="car__roof"></div>
+      <div class="car__trunk"></div>
+      <div class="car__wheel car__wheel--front-left"></div>
+      <div class="car__wheel car__wheel--front-right"></div>
+      <div class="car__wheel car__wheel--rear-left"></div>
+      <div class="car__wheel car__wheel--rear-right"></div>
+      <div class="car__headlight car__headlight--left"></div>
+      <div class="car__headlight car__headlight--right"></div>
+    </div>
+  </div>
+</body>
+</html>
