@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Урок 5 – Відступи</title>
+  <style>
+    /* ЗМУСЬОВАНИЙ ШРИФТ - БЕЗ КЕШУ */
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+      font-family: 'Courier New', Courier, monospace !important; 
+    }
+    
+    body {
+      background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+      color: #00ff88;
+      min-height: 100vh;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    /* ШАПКА - ДУЖЕ ВИДНА */
+    .page-header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0,255,136,0.1);
+      border: 3px solid #00ff88;
+      margin-bottom: 10px;
+      border-radius: 15px;
+    }
+    
+    .page-title {
+      font-size: 36px;
+      font-weight: bold;
+      color: #00ff88;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px #00ff88;
+    }
+    
+    .page-subtitle {
+      font-size: 18px;
+      color: #66ffaa;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    
+    /* ✅ ✅ ✅ ЗОБРАЖЕННЯ МІЖ ШАПКОЮ ТА КОНТЕНТОМ */
+    .hero-image {
+      text-align: center;
+      padding: 20px 0;
+      margin: 20px 0;
+      background: rgba(0,255,136,0.05);
+      border: 2px solid #00ff88;
+      border-radius: 15px;
+    }
+    
+    .hero-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 600px;
+      border-radius: 12px;
+      border: 3px solid #66ffaa;
+      box-shadow: 0 15px 40px rgba(0,255,136,0.4);
+    }
+    
+    /* СЕКЦІЇ */
+    .demo, .layout, .playground {
+      background: rgba(255,255,255,0.05);
+      border: 2px solid #00ff88;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+    }
+    
+    .demo__title, .layout__title, .playground__title {
+      font-size: 22px;
+      color: #00ff88;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    /* ДЕМО БЛОКИ - ЗЕЛЕНИЙ БОРДЮР */
+    .demo__row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .box {
+      flex: 1;
+      min-height: 100px;
+      border: 4px solid #00ff88 !important;
+      background: rgba(0,255,136,0.1);
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      text-align: center;
+      font-weight: bold;
+      text-shadow: 0 0 10px #00ff88;
+    }
+    
+    /* PADDING */
+    .box--padding-1 { padding: 30px; }
+    .box--padding-2 { padding: 15px 40px; }
+    .box--padding-3 { padding: 20px 30px 40px; }
+    .box--padding-4 { padding: 10px 25px 35px 45px; }
+    
+    /* MARGIN */
+    .box--margin-1 { 
+      padding: 15px; 
+      margin: 25px; 
+      background: rgba(255,0,255,0.2);
+    }
+    .box--margin-top { 
+      padding: 15px; 
+      margin-top: 50px; 
+      background: rgba(255,165,0,0.2);
+    }
+    
+    /* ІНДИВІДУАЛЬНІ */
+    .box--padding-top { padding-top: 40px; padding: 15px; }
+    .box--padding-right { padding-right: 40px; padding: 15px; }
+    .box--padding-bottom { padding-bottom: 40px; padding: 15px; }
+    .box--padding-left { padding-left: 40px; padding: 15px; }
+    
+    /* КАРТКИ */
+    .card {
+      background: rgba(0,255,136,0.15);
+      border: 2px solid #66ffaa;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+    
+    .card__title {
+      font-size: 24px;
+      color: #00ff88;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    
+    .card__text {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #ccffdd;
+    }
+    
+    .card__button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #00ff88;
+      color: #000;
+      border-radius: 25px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 5px 15px rgba(0,255,136,0.4);
+    }
+    
+    /* ТЕГИ */
+    .tag {
+      display: inline-block;
+      padding: 8px 16px;
+      margin: 5px;
+      border: 2px solid #00ff88;
+      border-radius: 20px;
+      background: rgba(0,255,136,0.2);
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .text--uppercase { text-transform: uppercase !important; }
+    .text--underline { text-decoration: underline !important; color: #ff00ff; }
+    .text--center { text-align: center !important; }
+  </style>
+</head>
+<body>
+  <!-- ШАПКА -->
+  <header class="page-header">
+    <h1 class="page-title">ДОМАШКА УРОК 5</h1>
+    <p class="page-subtitle">padding & margin </p>
+  </header>
+
+  <!-- ✅ ✅ ✅ ЗОБРАЖЕННЯ МІЖ ШАПКОЮ ТА КОНТЕНТОМ -->
+  <div class="hero-image">
+    <!-- ЗАМІНИ "твоє-зображення.jpg" на назву твого файлу -->
+    <img src="img/image.png" alt="Урок 5 - Відступи" class="hero-img">
+  </div>
+
+  <main>
+    <!-- 1. ТРЕНУВАННЯ -->
+    <section class="demo">
+      <h2 class="demo__title">1. ВЛАСТИВОСТІ</h2>
+
+      <div class="demo__row">
+        <div class="box box--padding-1">padding: 30px<br>ВСІ СТОРОНИ РІВНО</div>
+        <div class="box box--padding-2">padding: 15px 40px<br>vert | horiz</div>
+      </div>
+
+      <div class="demo__row">
+        <div class="box box--padding-3">padding: 20px 30px 40px<br>top | sides | bottom</div>
+        <div class="box box--padding-4">padding: 10px 25px 35px 45px<br>top right bottom left</div>
+      </div>
+
+      <div class="demo__row">
+        <div class="box box--margin-1">margin: 25px<br>ЗОВНІШНІЙ ВІДСТУП</div>
+        <div class="box box--margin-top">margin-top: 50px<br>ТІЛЬКИ ЗВЕРХУ</div>
+      </div>
+
+      <div class="demo__row">
+        <div class="box box--padding-top">padding-top: 40px</div>
+        <div class="box box--padding-right">padding-right: 40px</div>
+        <div class="box box--padding-bottom">padding-bottom: 40px</div>
+        <div class="box box--padding-left">padding-left: 40px</div>
+      </div>
+    </section>
+
+    <!-- 2. МАКЕТ -->
+    <section class="layout">
+      <h2 class="layout__title">2. МАКЕТ З ВІДСТУПАМИ</h2>
+      <article class="card">
+        <h3 class="card__title">КАРТКА 1</h3>
+        <p class="card__text">
+          Тут видно padding всередині, margin між елементами, 
+          різні font-size та line-height.
+        </p>
+        <a href="#" class="card__button">КНОПКА</a>
+      </article>
+    </section>
+
+    <!-- 3. ЕКСПЕРИМЕНТИ -->
+    <section class="playground">
+      <h2 class="playground__title">3. ЕКСПЕРИМЕНТИ</h2>
+      <div>
+        <span class="tag text--uppercase">DISPLAY: BLOCK</span>
+        <span class="tag text--underline">DISPLAY: INLINE</span>
+        <span class="tag text--center">DISPLAY: INLINE-BLOCK</span>
+      </div>
+      <p class="text--uppercase">TEXT-TRANSFORM: UPPERCASE</p>
+      <p class="text--underline">TEXT-DECORATION: UNDERLINE</p>
+      <p class="text--center">TEXT-ALIGN: CENTER</p>
+    </section>
+  </main>
+</body>
+</html>
