@@ -1,20 +1,77 @@
 <!DOCTYPE html>
-<!-- Ukraine - uk -->
-<!-- Мова не визначена - zxx -->
-<!-- Коди мов https://html-css.co.ua/html/lang-kodu-mov/ -->
-<html lang="en">
-	<head>
-		<!-- Кодування тексту -->
-		<meta charset="UTF-8">
-		<!-- Налаштування в'юпорту (адаптиву, масштабу тощо) -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--Підключення окремого файлу стилів -->
-		<link rel="stylesheet" href="css/style.css">
-		<!-- Заголовок сторінки в браузері (вкладці) -->
-		<title>Сторінка контактів</title>
-	</head>
-	<body>
-		<!-- <h1>Сторінка контактів</h1>
-		<a href="index.html">На головну</a> -->
-	</body>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Навігація -->
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="index.html" class="nav__logo">Logo</a>
+            <div class="nav__menu">
+                <a href="index.html" class="nav__link">Головна</a>
+                <a href="#" class="nav__link">Про нас</a>
+                <a href="#" class="nav__link">Послуги</a>
+                <a href="#" class="nav__link">Портфоліо</a>
+                <a href="contact.html" class="nav__link nav__link--active">Контакти</a>
+                <a href="#" class="nav__link nav__link--shop">Магазин</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contacts">
+        <div class="contacts__container">
+            <div class="contacts__header section-header">
+                <h1 class="section-header__title">Контакти</h1>
+                <p class="section-header__text">Зв'яжіться з нами для співпраці</p>
+            </div>
+            
+            <div class="contacts__content">
+                <div class="contacts__info">
+                    <div class="contacts__item">
+                        <h3 class="contacts__item-title">Телефон</h3>
+                        <p class="contacts__item-text">+380 (XX) XXX-XX-XX</p>
+                    </div>
+                    <div class="contacts__item">
+                        <h3 class="contacts__item-title">Email</h3>
+                        <p class="contacts__item-text">info@example.com</p>
+                    </div>
+                    <div class="contacts__item">
+                        <h3 class="contacts__item-title">Адреса</h3>
+                        <p class="contacts__item-text">м. Київ, вул. Прикладна, 123</p>
+                    </div>
+                    <div class="contacts__buttons">
+                        <a href="index.html" class="contacts__button contacts__button--back">← На головну</a>
+                        <a href="#" class="contacts__button contacts__button--shop">До магазину</a>
+                    </div>
+                </div>
+                
+                <form class="contacts__form form-contacts">
+                    <div class="form-contacts__field">
+                        <input type="text" placeholder="Ваше ім'я" class="form-contacts__input">
+                    </div>
+                    <div class="form-contacts__field">
+                        <input type="email" placeholder="Email" class="form-contacts__input">
+                    </div>
+                    <div class="form-contacts__field">
+                        <textarea placeholder="Повідомлення" class="form-contacts__textarea"></textarea>
+                    </div>
+                    <div class="form-contacts__buttons">
+                        <button type="submit" class="form-contacts__submit">Відправити</button>
+                        <a href="index.html" class="form-contacts__back">Повернутись</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
 </html>

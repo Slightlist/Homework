@@ -1,66 +1,125 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BEM Lesson Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна сторінка</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Header блок -->
-  <header class="header">
-    <div class="header__logo">Logo</div>
-    <nav class="header__nav">
-      <ul class="header__nav-list">
-        <li class="header__nav-item">
-          <a href="#" class="header__nav-link header__nav-link--active">Головна</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="#" class="header__nav-link">Про нас</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="#" class="header__nav-link">Контакти</a>
-        </li>
-      </ul>
+    <!-- Навігація -->
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="index.html" class="nav__logo">Logo</a>
+            <div class="nav__menu">
+                <a href="index.html" class="nav__link nav__link--active">Головна</a>
+                <a href="#" class="nav__link">Про нас</a>
+                <a href="#" class="nav__link">Послуги</a>
+                <a href="#" class="nav__link">Портфоліо</a>
+                <a href="contact.html" class="nav__link">Контакти</a>
+                <a href="#" class="nav__link nav__link--shop">Магазин</a>
+            </div>
+        </div>
     </nav>
-    <button class="header__button header__button--menu">Меню</button>
-  </header>
 
-  <!-- Main content з card блоками -->
-  <main class="main">
+    <!-- Hero Section -->
     <section class="hero">
-      <h1 class="hero__title">Вивчаємо BEM</h1>
-      <p class="hero__text">Теорія, експерименти та практика HTML з класами.</p>
-      <button class="hero__button hero__button--primary">Почати</button>
+        <div class="hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">Ласкаво просимо</h1>
+                <p class="hero__text"></p>
+                <div class="hero__buttons">
+                    <a href="contact.html" class="hero__button">Контакти</a>
+                    <a href="#" class="hero__button hero__button--secondary">Магазин</a>
+                </div>
+            </div>
+            <div class="hero__image">
+                <img src="img/img.png" alt="Головне зображення">
+            </div>
+        </div>
     </section>
 
-    <div class="cards">
-      <article class="card card--featured">
-        <img src="image1.jpg" alt="Картинка 1" class="card__image">
-        <div class="card__content">
-          <h2 class="card__title">Карта 1</h2>
-          <p class="card__text">Опис карти з BEM класами.</p>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features__container">
+            <div class="features__header">
+                <h2 class="features__title">Переваги</h2>
+                <p class="features__subtitle">Чому обирають нас</p>
+            </div>
+            <div class="features__list">
+                <div class="features__item">
+                    <div class="features__icon">🚀</div>
+                    <h3 class="features__item-title">Швидкість</h3>
+                    <p class="features__item-text">Швидке завантаження та робота</p>
+                </div>
+                <div class="features__item">
+                    <div class="features__icon">🎨</div>
+                    <h3 class="features__item-title">Дизайн</h3>
+                    <p class="features__item-text">Сучасний та стильний</p>
+                </div>
+                <div class="features__item">
+                    <div class="features__icon">📱</div>
+                    <h3 class="features__item-title">Адаптивність</h3>
+                    <p class="features__item-text">Працює на всіх пристроях</p>
+                </div>
+            </div>
         </div>
-        <footer class="card__footer">
-          <button class="card__button card__button--secondary">Детальніше</button>
-        </footer>
-      </article>
+    </section>
 
-      <article class="card">
-        <img src="image2.jpg" alt="Картинка 2" class="card__image">
-        <div class="card__content">
-          <h2 class="card__title">Карта 2</h2>
-          <p class="card__text">Друга карта для експериментів.</p>
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="gallery__container">
+            <div class="gallery__header">
+                <h2 class="gallery__title">Галерея</h2>
+                <p class="gallery__subtitle">Наші роботи</p>
+            </div>
+            <div class="gallery__items">
+                <div class="gallery__column">
+                    <div class="gallery__item item-gallery">
+                        <a href="#" class="item-gallery__link">
+                            <img src="img.png" alt="Проект 1" class="item-gallery__image">
+                        </a>
+                        <h3 class="item-gallery__title">Проект 1</h3>
+                        <p class="item-gallery__text">Опис першого проекту</p>
+                    </div>
+                </div>
+                <div class="gallery__column gallery__column--big">
+                    <div class="gallery__item item-gallery">
+                        <a href="#" class="item-gallery__link">
+                            <img src="img.png" alt="Проект 2" class="item-gallery__image">
+                        </a>
+                        <h3 class="item-gallery__title">Проект 2</h3>
+                        <p class="item-gallery__text">Опис другого проекту</p>
+                    </div>
+                </div>
+                <div class="gallery__column">
+                    <div class="gallery__item item-gallery">
+                        <a href="#" class="item-gallery__link">
+                            <img src="img.png" alt="Проект 3" class="item-gallery__image">
+                        </a>
+                        <h3 class="item-gallery__title">Проект 3</h3>
+                        <p class="item-gallery__text">Опис третього проекту</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <footer class="card__footer">
-          <button class="card__button">Читати</button>
-        </footer>
-      </article>
-    </div>
-  </main>
+    </section>
 
-  <!-- Footer блок -->
-  <footer class="footer">
-    <p class="footer__copyright">&copy; 2025 BEM Lesson</p>
-  </footer>
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta__container">
+            <h2 class="cta__title">Готові почати?</h2>
+            <div class="cta__buttons">
+                <a href="contact.html" class="cta__button">Зв'яжіться з нами</a>
+                <a href="#" class="cta__button cta__button--secondary">Переглянути магазин</a>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
