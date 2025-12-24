@@ -1,63 +1,135 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Урок 10 - Position + BEM</title>
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 10 – Position + BEM (Повна версія)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="wrapper">
-    <header class="header">
-      <nav class="header__nav">
-        <ul class="header__menu">
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Головна</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Послуги</a>
-            <ul class="header__submenu">
-              <li class="header__submenu-item">
-                <a href="#" class="header__submenu-link">Дизайн</a>
-                <ul class="header__sub-submenu">
-                  <li class="header__sub-submenu-item">
-                    <a href="#" class="header__sub-submenu-link">UI Дизайн</a>
-                  </li>
-                  <li class="header__sub-submenu-item">
-                    <a href="#" class="header__sub-submenu-link">UX Дизайн</a>
-                  </li>
+    <div class="wrapper">
+        <!-- STICKY HEADER -->
+        <header class="header">
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li class="header__menu-item">
+                        <a href="#" class="header__menu-link">Головна</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#" class="header__menu-link">Послуги</a>
+                        <ul class="header__submenu">
+                            <li class="header__submenu-item">
+                                <a href="#" class="header__submenu-link">Дизайн</a>
+                                <ul class="header__sub-submenu">
+                                    <li class="header__sub-submenu-item">
+                                        <a href="#" class="header__sub-submenu-link">UI Дизайн</a>
+                                    </li>
+                                    <li class="header__sub-submenu-item">
+                                        <a href="#" class="header__sub-submenu-link">UX Дизайн</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="header__submenu-item">
+                                <a href="#" class="header__submenu-link">Розробка</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="contacts.html" class="header__menu-link">Контакти</a>
+                    </li>
                 </ul>
-              </li>
-              <li class="header__submenu-item">
-                <a href="#" class="header__submenu-link">Розробка</a>
-              </li>
-            </ul>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Контакти</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+            </nav>
+        </header>
 
-    <main class="main">
-      <h1 style="text-align: center; margin-bottom: 40px;">Тест Position + BEM</h1>
-      
-      <article class="card">
-        <div class="card__image-container">
-          <div>Зображення (200pxx200px)</div>
-          <div class="card__overlay">Hover тут!</div>
+        <!-- MAIN CONTENT -->
+        <main class="main">
+            <h1 class="main__title">Position + BEM Демонстрація</h1>
+            
+            <!-- ✅ 3 КАРТИНКИ (Твої img/project1.jpg, img/project2.jpg, img/project3.jpg) -->
+            <!-- Тільки ЦІ 3 БЛОКИ зміни -->
+<div class="images-grid">
+    <!-- КАРТИНКА 1 -->
+    <article class="image-card">
+        <div class="image-card__image-container">
+            <!-- ЗАМІНИ ЦЕ на шлях до ТВОЄЇ картинки -->
+            <img src="img/Screenshot 2025-12-24 154841.png" alt="Проект 1" class="image-card__image">
+            <div class="image-card__overlay"> Подробніше</div>
         </div>
-        <h2 class="card__title">Карта з Overlay</h2>
-        <p style="padding: 0 20px 20px;">Position: relative (контейнер) + absolute (overlay)</p>
-      </article>
+        <div class="image-card__content">
+            <h3 class="image-card__title">Проект 1</h3>
+            <p class="image-card__text">Сучасний веб-сайт</p>
+        </div>
+    </article>
 
-      <p style="text-align: center; margin: 100px 0; font-size: 18px; color: #666;">
-        Прокрутіть вниз - header липкий (sticky)!<br>
-        Наведіть на "Послуги" - меню 3 рівня!
-      </p>
-    </main>
-  </div>
+    <!-- КАРТИНКА 2 -->
+    <article class="image-card">
+        <div class="image-card__image-container">
+            <!-- ЗАМІНИ ЦЕ -->
+            <img src="img/Screenshot 2025-12-24 154850.png" alt="Проект 2" class="image-card__image">
+            <div class="image-card__overlay"> Подробніше</div>
+        </div>
+        <div class="image-card__content">
+            <h3 class="image-card__title">Проект 2</h3>
+            <p class="image-card__text">Мобільний додаток</p>
+        </div>
+    </article>
+
+    <!-- КАРТИНКА 3 -->
+    <article class="image-card">
+        <div class="image-card__image-container">
+            <!-- ЗАМІНИ ЦЕ -->
+            <img src="img/Screenshot 2025-12-24 154855.png" alt="Проект 3" class="image-card__image">
+            <div class="image-card__overlay"> Подробніше</div>
+        </div>
+        <div class="image-card__content">
+            <h3 class="image-card__title">Проект 3</h3>
+            <p class="image-card__text">Лендінг-пейдж</p>
+        </div>
+    </article>
+</div>  
+            <!-- ✅ FEATURES БЛОК (3 зелені + 1 сірий) -->
+            <section class="features-section">
+                <h2 class="features-section__title">Переваги нашого сервісу</h2>
+                <div class="features-grid">
+                    <div class="feature-item feature-item--green">
+                        <div class="feature-item__mark">✅</div>
+                        <div class="feature-item__content">
+                            <h3 class="feature-item__title">Unlimited product updates</h3>
+                        </div>
+                    </div>
+                    <div class="feature-item feature-item--green">
+                        <div class="feature-item__mark">✅</div>
+                        <div class="feature-item__content">
+                            <h3 class="feature-item__title">Unlimited product</h3>
+                        </div>
+                    </div>
+                    <div class="feature-item feature-item--green">
+                        <div class="feature-item__mark">✅</div>
+                        <div class="feature-item__content">
+                            <h3 class="feature-item__title">1GB Cloud storage</h3>
+                        </div>
+                    </div>
+                    <div class="feature-item feature-item--grey">
+                        <div class="feature-item__mark">❌</div>
+                        <div class="feature-item__content">
+                            <h3 class="feature-item__title">Email and community support</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <p class="scroll-hint">
+                📜 Прокрутіть вниз – header липкий!<br>
+                🖱️ Наведіть на "Послуги" – меню 3 рівня!
+            </p>
+        </main>
+    </div>
 </body>
 </html>
