@@ -1,0 +1,249 @@
+@import url("reset.css");
+@import url("fonts.css");
+
+/* ОСНОВНІ */
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #333;
+    color: #fff;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 100vh;
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper > main {
+    flex-grow: 1;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    padding: 25px 0;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+}
+
+/* PAGE */
+.page {
+    padding: 60px 0;
+    flex-grow: 1;
+}
+
+[class*="__container"] {
+    max-width: 1392px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* FLEXBLOCK */
+.block {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    padding: 80px 0;
+    border-radius: 25px;
+    margin: 40px 0;
+    box-shadow: 0 25px 75px rgba(0,0,0,0.4);
+}
+
+.block__container {
+    max-width: 1200px;
+}
+
+.block__items {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.block__item {
+    flex: 0 1 380px;
+    max-width: 400px;
+}
+
+/* КАРТКА item-block */
+.item-block {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.item-block:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+
+.item-block__link-image {
+    display: block;
+    height: 260px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.item-block__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.item-block:hover .item-block__image {
+    transform: scale(1.08);
+}
+
+.item-block__body {
+    flex-grow: 1;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-block__date {
+    font-size: 0.85rem;
+    color: #93c5fd;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.item-block__title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.4;
+    flex-grow: 1;
+    margin: 0;
+}
+
+.item-block__link-title {
+    color: #f8fafc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.item-block__link-title:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+}
+
+.link {
+    align-self: flex-start;
+    padding: 14px 28px;
+    background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+    color: #ffffff;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59,130,246,0.4);
+}
+
+.link:hover {
+    background: linear-gradient(45deg, #1d4ed8, #1e40af);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(59,130,246,0.6);
+}
+
+/* FOOTER */
+.footer {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 45px 0;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    box-shadow: 0 -5px 25px rgba(0,0,0,0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .block__item {
+        flex: 1 1 350px;
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .block__items {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+    
+    .block__item {
+        max-width: 90%;
+        flex: 1 1 auto;
+    }
+    
+    .item-block__title {
+        font-size: 1.25rem;
+    }
+    
+    .page, .block {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    [class*="__container"] {
+        padding: 0 15px;
+    }
+    
+    .item-block__body {
+        padding: 24px;
+        gap: 16px;
+    }
+    
+    .item-block__title {
+        font-size: 1.15rem;
+    }
+}
+
+
+/* ДОДАЙ ЦЕ В КІнець style.css */
+
+/* Ціни */
+.item-block__price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f59e0b;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ВИПРАВЛЕННЯ висоти карток */
+.block__items {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch; /* ✅ ВИПРАВЛЯЄ ПОРОЖНЬІЙ ПРОСТІР */
+}
+
+.block__item {
+    flex: 1 1 380px;
+    max-width: 400px;
+    display: flex; /* ✅ Робить всі картки однакової висоти */
+}
+
+.item-block {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* ✅ Заповнює весь простір */
+    /* решта стилів... */
+}
