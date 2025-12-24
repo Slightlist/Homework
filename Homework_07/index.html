@@ -3,100 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Урок 7 – Домашка (Псевдокласи + Псевдоелементи)</title>
+    <title>Урок 7 – Гра Hover (З Win Screen)</title>
     
-    <!-- ШРИФТИ З УРОКУ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
-        <!-- 1. ПСЕВДОКЛАСИ СТАНУ -->
-        <section class="demo-section">
-            <h1 class="section-title">1. ПСЕВДОКЛАСИ СТАНУ (:hover, :active, :visited, :focus)</h1>
+        <!-- 1. ГРА HOVER З РАХУНКОМ -->
+        <section class="game-section">
+            <h1 class="section-title">ГРА: Знайди 3 скарби!</h1>
+            <div class="game-info">
+                <span class="score">Скарби: <span class="score-number">0</span>/3</span>
+                <span class="tries">Спроби: <span class="tries-number">0</span></span>
+                <button class="reset-btn" onclick="resetGame()">🔄 Новий раунд</button>
+            </div>
+            <div class="game-board" id="gameBoard">
+                <!-- Клітинки генеруються JS -->
+            </div>
+            <p class="game-rules">Наведи на клітинки → Знайди всі 💎 → Виграй!</p>
             
-            <div class="links-demo">
-                <a href="https://google.com" class="link link-1">Посилання 1</a>
-                <a href="https://google.sk" class="link link-2">Посилання 2 <span>з span</span></a>
-                <a href="#target-block" class="link link-3">До target блоку</a>
-                <button class="button-demo">Button :focus</button>
-            </div>
-        </section>
-
-        <!-- 2. ПСЕВДОКЛАСИ ПОЛОЖЕННЯ -->
-        <section class="position-section">
-            <h2 class="section-title">2. ПСЕВДОКЛАСИ ПОЛОЖЕННЯ</h2>
-            <div class="text-block">
-                <p>Перший параграф :first-child</p>
-                <p class="highlight">Другий :nth-child(2)</p>
-                <p>Третій параграф</p>
-                <p>Четвертий :nth-child(4n+2)</p>
-                <p>П'ятий параграф</p>
-                <p>Шостий :last-child</p>
-            </div>
-        </section>
-
-        <!-- 3. МАКЕТ З image.png -->
-        <section class="mockup-section">
-            <h2 class="section-title">3. МАКЕТ З ОБМЕЖУЮЧИМ КОНТЕЙНЕРОМ</h2>
-            <div class="hero">
-                <img src="img/image.png" alt="Головне зображення" class="hero-image">
-                <div class="hero-content">
-                    <h3 class="hero-title">Сучасний дизайн</h3>
-                    <p class="hero-text">Псевдокласи + псевдоелементи у дії</p>
-                    <a href="#" class="hero-btn">Дізнатись більше</a>
-                </div>
-            </div>
-            
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>Карта 1 :hover</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-                <div class="card highlight">
-                    <h3>Карта 2 :has(.highlight)</h3>
-                    <p>Спеціальна картка з ефектами</p>
-                </div>
-                <div class="card">
-                    <h3>Карта 3 :not(.highlight)</h3>
-                    <p>Звичайна картка</p>
+            <!-- ✅ WIN SCREEN (прихований за замовчуванням) -->
+            <div class="win-screen" id="winScreen">
+                <div class="win-screen__content">
+                    <h2 class="win-screen__title">ВІТАЮ! ТИ ВИГРАВ!</h2>
+                    <p class="win-screen__text">Ви знайшли всі 3 скарби за <span id="final-tries">0</span> спроби</p>
+                    <div class="win-screen__buttons">
+                        
+                        
+                    </div>
                 </div>
             </div>
         </section>
-
-        <!-- 4. СПИСОК -->
+          <!-- 2. СПИСОК З ::before -->
         <section class="list-section">
-            <h2 class="section-title">4. СТИЛІЗОВАНИЙ СПИСОК</h2>
+            <h2 class="section-title">2. СПИСОК З ПСЕВДОЕЛЕМЕНТАМИ</h2>
             <ul class="custom-list">
-                <li class="list-item">Перший елемент :first-child</li>
-                <li class="list-item">Другий :nth-child(2n)</li>
-                <li class="list-item highlight">Третій з класом</li>
-                <li class="list-item">Четвертий :nth-child(4n)</li>
+                <li class="list-item">Перший пункт</li>
+                <li class="list-item">Другий пункт</li>
+                <li class="list-item list-item--active">Третій (активний)</li>
+                <li class="list-item">Останній пункт</li>
+
+     
             </ul>
         </section>
-
-        <!-- 5. TARGET БЛОК -->
-        <section id="target-block" class="target-section">
-            <h2 class="section-title">5. :target БЛОК</h2>
-            <p>Цей блок показує ефект :target від посилання вище</p>
-            <div class="target-box">TARGET активний!</div>
-        </section>
-
-        <!-- 6. ЕКСПЕРИМЕНТИ -->
-        <section class="experiments">
-            <h2 class="section-title">6. ЕКСПЕРИМЕНТИ</h2>
-            <div class="exp-buttons">
-                <a href="#" class="exp-btn exp1">::before</a>
-                <a href="#" class="exp-btn exp2">::after</a>
-                <button class="exp-btn exp3">Кнопка</button>
-            </div>
-        </section>
     </div>
+
+    <script>
+        const treasures = [2, 5, 8]; // скарби на позиціях 3,6,9
+        let score = 0;
+        let tries = 0;
+
+        function initGame() {
+            const board = document.getElementById('gameBoard');
+            board.innerHTML = '';
+            
+            for(let i = 0; i < 9; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'game-cell';
+                cell.dataset.index = i;
+                
+                if(treasures.includes(i)) {
+                    cell.classList.add('game-cell--treasure');
+                }
+                
+                cell.addEventListener('mouseenter', function() {
+                    tries++;
+                    document.querySelector('.tries-number').textContent = tries;
+                    
+                    if(treasures.includes(parseInt(this.dataset.index))) {
+                        score++;
+                        document.querySelector('.score-number').textContent = score;
+                        this.style.background = 'linear-gradient(45deg, #f59e0b, #d97706)';
+                        
+                        if(score === 3) {
+                            showWinScreen();
+                        }
+                    }
+                });
+                
+                board.appendChild(cell);
+            }
+        }
+
+        function showWinScreen() {
+            document.getElementById('final-tries').textContent = tries;
+            document.getElementById('winScreen').style.display = 'block';
+            document.querySelector('.game-board').style.opacity = '0.5';
+        }
+
+        function resetGame() {
+            score = 0;
+            tries = 0;
+            document.querySelector('.score-number').textContent = '0';
+            document.querySelector('.tries-number').textContent = '0';
+            document.getElementById('winScreen').style.display = 'none';
+            document.querySelector('.game-board').style.opacity = '1';
+            initGame();
+        }
+
+        function shareWin() {
+            const text = ` Я виграв гру! Знайшов 3 скарби за ${tries} спроб!`;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('📋 Текст скопійовано! Поділись перемогою!');
+            });
+        }
+
+        initGame();
+    </script>
 </body>
 </html>
