@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- Ukraine - uk -->
+<!-- Мова не визначена - zxx -->
+<!-- Коди мов https://html-css.co.ua/html/lang-kodu-mov/ -->
+<html lang="en">
+	<head>
+		<!-- Кодування тексту -->
+		<meta charset="UTF-8">
+		<!-- Налаштування в'юпорту (адаптиву, масштабу тощо) -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Підключення шрифтів -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Playfair%20Display:wght@400&display=swap" rel="stylesheet">
+		<!--Підключення окремого файлу стилів -->
+		<link rel="stylesheet" href="css/style.css">
+		<!-- Заголовок сторінки в браузері (вкладці) -->
+		<title>Lesson 14</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header"></header>
+
+			<main class="page">
+				<form method="post" action="#" enctype="multipart/form-data" class="form">
+					<div class="form__head">
+						<h1 class="form__main-title">REGISTER TO FURNITUR</h1>
+						<p class="form__subtitle">GET MONTHLY VOUCHER WITH JUST ONE CLICK!</p>
+					</div>
+
+					<div class="form__body">
+						<div class="form__content">
+							<h2 class="form__section-title">YOUR INFORMATION</h2>
+							<p class="form__section-text">
+								You already have an account?
+								<a class="form__link" href="#">Sign in here</a>
+							</p>
+
+							<div class="form__rows">
+								<div class="form__row">
+									<label class="form__field">
+										<span class="form__label">Your name</span>
+										<input
+											class="form__input"
+											type="text"
+											name="name"
+											placeholder="Enter your full name"
+											autocomplete="name"
+											required
+											minlength="2"
+										>
+									</label>
+
+									<label class="form__field">
+										<span class="form__label">E-mail</span>
+										<input
+											class="form__input"
+											type="email"
+											name="email"
+											placeholder="Enter your e-mail"
+											autocomplete="email"
+											required
+										>
+									</label>
+								</div>
+
+								<div class="form__row">
+									<label class="form__field">
+										<span class="form__label">Phone number</span>
+										<input
+											class="form__input"
+											type="tel"
+											name="phone"
+											placeholder="Enter your phone number"
+											autocomplete="tel"
+											required
+										>
+									</label>
+
+									<label class="form__field">
+										<span class="form__label">Reset Password</span>
+										<input
+											class="form__input"
+											type="password"
+											name="reset-password"
+											placeholder="Create a new password"
+											autocomplete="new-password"
+											minlength="6"
+											required
+										>
+									</label>
+								</div>
+
+								<div class="form__row form__row--single">
+									<label class="form__field">
+										<span class="form__label">Password</span>
+										<input
+											class="form__input"
+											type="password"
+											name="password"
+											placeholder="Confirm password"
+											autocomplete="new-password"
+											minlength="6"
+											required
+										>
+									</label>
+								</div>
+							</div>
+
+							<button class="form__button" type="submit">Create an account</button>
+						</div>
+
+						<!-- Права колонка: тільки лампи (права частина зображення) -->
+						<div class="form__image">
+							<div class="form__light"></div>
+						</div>
+					</div>
+				</form>
+			</main>
+
+			<footer class="footer"></footer>
+		</div>
+	</body>
+</html>

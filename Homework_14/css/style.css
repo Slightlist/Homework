@@ -1,0 +1,217 @@
+/* Скидання стилів */
+@import url("reset.css");
+
+/* Локальне підключення шрифтів */
+@import url("fonts.css");
+
+/* Основні стилі */
+body {
+	font-family: "Roboto", sans-serif;
+	background-color: #f5f5f5;
+	color: #333;
+}
+
+.wrapper {
+	position: relative;
+	min-height: 100%;
+	overflow: clip;
+	display: flex;
+	flex-direction: column;
+}
+
+.wrapper > main {
+	flex-grow: 1;
+}
+
+/* ------------------------------------------------------------------- */
+.page {
+	padding: 80px 15px;
+}
+
+[class*="__container"] {
+	max-width: 1392px;
+	margin: 0 auto;
+}
+
+[class*="--margin"] {
+	margin-bottom: 50px;
+}
+/* ------------------------------------------------------------------- */
+
+/* Форма реєстрації */
+.form {
+	max-width: 1200px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 60px 70px 70px;
+}
+
+.form__head {
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.form__main-title {
+	font-family: "Playfair Display", serif;
+	font-size: 36px;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.form__subtitle {
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	color: #777;
+}
+
+.form__body {
+	display: flex;
+	gap: 60px;
+	align-items: stretch;
+}
+
+.form__content {
+	flex: 0 1 48%;
+}
+
+/* Тексти зліва */
+.form__section-title {
+	font-size: 24px;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	margin-bottom: 15px;
+}
+
+.form__section-text {
+	font-size: 14px;
+	color: #777;
+	margin-bottom: 35px;
+}
+
+.form__link {
+	color: #333;
+	font-weight: 500;
+	text-decoration: underline;
+}
+
+/* Поля форми */
+.form__rows {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.form__row {
+	display: flex;
+	gap: 30px;
+}
+
+.form__row--single .form__field {
+	flex: 0 1 50%;
+}
+
+.form__field {
+	flex: 1 1 50%;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.form__label {
+	font-size: 14px;
+	color: #555;
+}
+
+.form__input {
+	height: 44px;
+	padding: 0 15px;
+	border-radius: 0;
+	border: 1px solid #dedede;
+	font-size: 14px;
+	background-color: transparent;
+}
+
+.form__input::placeholder {
+	color: #bbb;
+}
+
+.form__input:focus-visible {
+	outline: 1px solid #333;
+	outline-offset: 2px;
+}
+
+.form__button {
+	margin-top: 40px;
+	padding: 15px 60px;
+	background-color: #222;
+	color: #fff;
+	border: none;
+	font-size: 14px;
+	text-transform: none;
+}
+
+.form__button:hover {
+	background-color: #000;
+}
+
+/* Права колонка з картинкою */
+.form__image {
+	flex: 0 1 52%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end; /* притискаємо до правого краю */
+}
+
+/* Тільки права частина картинки, де висять лампи, більша, верхній текст обрізаний */
+.form__light {
+	width: 70%;              /* було 80% – зробили трохи вужчим */
+	max-width: 460px;        /* трохи менший максимум */
+	aspect-ratio: 3 / 4;
+	background-image: url("../img/Lights.png");
+	background-repeat: no-repeat;
+	background-position: 100% 70%; /* все ще беремо праву нижню частину з лампами */
+	background-size: 240% auto;    /* було 280% – зменшили масштаб */
+}
+
+/* Перемикач із уроку (залишаємо для прикладу) */
+.switcher {
+	width: 80px;
+	height: 30px;
+	border-radius: 15px;
+	background-color: #7a956b;
+	cursor: pointer;
+	position: relative;
+}
+
+.switcher input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.switcher::before {
+	transition:
+		left 0.3s,
+		transform 0.3s;
+	width: 30px;
+	height: 30px;
+	content: "";
+	border-radius: 50%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	box-shadow: inset 0 0 10px 3px rgba(0, 0, 0, 0.2);
+	background-color: #77608d;
+}
+
+.switcher:has(input:focus-visible) {
+	outline: 1px solid #fff;
+	outline-offset: 3px;
+}
+
+.switcher:has(input:checked)::before {
+	left: 100%;
+	transform: translateX(-100%);
+}
