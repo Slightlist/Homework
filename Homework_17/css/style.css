@@ -1,0 +1,612 @@
+/* Скидання стилів */
+@import url("reset.css");
+
+/* Локальне підключення шрифтів */
+@import url("fonts.css");
+
+/* Підключення шрифтів */
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Playfair%20Display:wght@400&display=swap"); */
+
+/* Основні стилі */
+
+/* Значення за замовченням  */
+body {
+	font-family: "Roboto", sans-serif;
+	background-color: #f5f5f6;
+	color: #1b1b1d;
+	line-height: 1.5;
+}
+.wrapper {
+	position: relative;
+	min-height: 100%;
+	overflow: clip;
+
+	display: flex;
+	flex-direction: column;
+}
+.wrapper > main {
+	flex-grow: 1;
+}
+[class*="--margin"] {
+	margin-bottom: 50px;
+}
+
+/* ------------------------------------------------------------------- */
+
+/* GIRD */
+
+/* GRID-контейнер */
+.grid {
+	background-color: #794f45;
+
+	/* Об'являємо grid-контейнер */
+	/* Блочний grid */
+	display: grid;
+	/* Блочно-рядковий grid */
+	/* display: inline-grid; */
+
+	gap: 20px;
+	/* 
+	row-gap: ; 
+	column-gap: ;
+	*/
+	/* gap: 20px 30px; */
+
+	/* Побудова явної сітки */
+	/* grid-template-columns - налаштовує колонки */
+	/* grid-template-columns: 100px 250px 150px; */
+
+	/* Одиниця виміру FR(фракція, фрагмент) */
+	/* grid-template-columns: 20% auto 1fr 100px; */
+	/* grid-template-columns: auto auto 1fr auto; */
+	/* grid-template-columns: 1fr 1fr 1fr; */
+	/* grid-template-columns: 33.333% 33.333% 33.333%; */
+	/* grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr; */
+
+	/* Повторення repeat */
+	/* grid-template-columns: repeat(3, 1fr); */
+
+	/* grid-template-rows - налаштовує рядки */
+	/* grid-template-rows: repeat(2, 1fr); */
+
+	/* Універсальна властивість побудови явних колонок та рядків */
+	/* grid-template: rows / columns  ; */
+	/* grid-template: repeat(4, 100px) / repeat(3, 1fr); */
+
+	/* Налаштування неявної сітки */
+	/* grid-template: repeat(1, 1fr) / repeat(2, 1fr); */
+
+	/* 
+		grid-auto-flow - алгоритм виводу 
+		об'єктів у явну і неявну сітку 
+	*/
+	/* за замовченням */
+	/* grid-auto-flow: row;  */
+	/* grid-auto-flow: column; */
+
+	/* Налаштування розміру (ширини) неявної колонки */
+	/* grid-auto-columns: 1fr; */
+	/* Налаштування розміру (висоти) неявного рядка  */
+	/* grid-auto-rows: 1fr; */
+
+	/* Вирівнювання об'єктів */
+	/* height: 300px; */
+	/* grid-template: repeat(2, 0.2fr) / repeat(3, 0.3fr); */
+
+	/* 
+		Вирівнювання об'єктів в середені 
+		комірок вздовж горизонтальної лінії 
+	*/
+
+	/* justify-items: stretch; */ /* За замовченням */
+	/* justify-items: start; */
+	/* justify-items: end; */
+	/* justify-items: center; */
+
+	/* 
+		Вирівнювання об'єктів (комірок) в середені grid-контейнера 
+		вздовж горизонтальної лінії 
+	*/
+	/* justify-content: stretch; */ /* За замовченням */
+	/* justify-content: start; */
+	/* justify-content: end; */
+	/* justify-content: center; */
+	/* justify-content: space-around; */
+	/* justify-content: space-between; */
+	/* justify-content: space-evenly; */
+
+	/* 
+		Вирівнювання об'єктів в середені 
+		комірок вздовж вертикальної лінії 
+	*/
+
+	/* align-items: stretch; */ /* За замовченням  */
+	/* align-items: start; */
+	/* align-items: end; */
+	/* align-items: center; */
+
+	/* 
+		Вирівнювання об'єктів (комірок) в середені 
+		grid-контейнера вздовж вертикальної лінії 
+	*/
+	/* align-content: stretch; */ /* За замовченням  */
+	/* align-content: start; */
+	/* align-content: center; */
+	/* align-content: end; */
+	/* align-content: space-around; */
+	/* align-content: space-between; */
+	/* align-content: space-evenly; */
+
+	/* minmax */
+	/* grid-template-columns: repeat(3, 200px); */
+	/* grid-template-columns: repeat(3, minmax(100px, 200px)); */
+	/* grid-template-columns: repeat(3, minmax(180px, 1fr)); */
+
+	/* 
+		Алгоритми автоматичного заповнення контейнера 
+		(перебудови сітки) 
+	*/
+	/* grid-template-columns: repeat(алгоритм заповнення, межі розмірів); */
+
+	/* auto-fit - будує конструкцію на основі HTML grid-елементів */
+	/* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+
+	/* auto-fill - будує конструкцію на основі CSS */
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+	/* Використання MIN */
+	/* grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr)); */
+
+	/* grid-template-columns: repeat(3, 1fr); */
+}
+
+/* GRID-елемент */
+.grid__item {
+	background-color: #7a956b;
+	padding: 10px;
+	font-size: 24px;
+}
+.grid__item:nth-child(1) {
+	/* order: 4; */
+}
+
+.grid__item:nth-child(2) {
+	/* order: 6; */
+	/* Властивості GRID-елементів */
+
+	/* Перезапис вертикального положення */
+	/* align-self: stretch; */
+	/* align-self: start; */
+	/* align-self: end; */
+	/* align-self: center; */
+
+	/* Перезапис горизонтального положення */
+	/* justify-self: stretch; */
+	/* justify-self: start; */
+	/* justify-self: end; */
+	/* justify-self: center; */
+
+	/* Управління положенням елемента */
+	/* 
+		Початкова і кінечна позиція елементу 
+		по горизонталі
+	*/
+	/* 
+	grid-column-start: ;
+	grid-column-end: ;
+	grid-column
+	*/
+	/* 
+		Початкова і кінечна позиція елементу 
+		по вертикалі
+	*/
+	/* 
+	grid-row-start: ;
+	grid-row-end: ;
+	grid-row
+	*/
+
+	/* grid-column-start: 2; */
+	/* grid-column-end: 4; */
+	/* або */
+	/* grid-column: 1 / 4; */
+
+	/* grid-row-start: 1; */
+	/* grid-row-end: 3; */
+	/* або */
+	/* grid-row: 1 / 3; */
+
+	/* grid-column: span 2; */
+	/* grid-row: span 3; */
+}
+
+/*
+.grid__item:nth-child(3) {
+	order: 5;
+}
+.grid__item:nth-child(4) {
+	order: 1;
+}
+.grid__item:nth-child(5) {
+	order: 3;
+}
+.grid__item:nth-child(6) {
+	order: 2;
+}
+	*/
+
+/* GRID-AREA */
+/*
+.grid-area {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 0.3fr 1fr 0.3fr;
+	grid-template-rows: auto 1fr auto;
+
+	grid-template-areas:
+		"header header header"
+		"sidebar main main"
+		"footer footer footer";
+}
+
+@media (width <= 500px) {
+	.grid-area {
+		grid-template-areas:
+			"header header header"
+			"sidebar sidebar sidebar"
+			"main main main"
+			"footer footer footer";
+	}
+}
+
+.grid-area__header {
+	padding: 20px;
+	grid-area: header;
+	background-color: #794f45;
+}
+.grid-area__side {
+	padding: 20px;
+	grid-area: sidebar;
+	color: #000;
+	background-color: #fff;
+}
+.grid-area__body {
+	padding: 20px;
+	grid-area: main;
+	background-color: #7a956b;
+}
+.grid-area__footer {
+	padding: 20px;
+	background-color: #77608d;
+	grid-area: footer;
+}
+*/
+
+/* Практичний приклад */
+
+/* .items {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.items:has(.items__item--big) {
+	
+} */
+
+/* .items__item {
+}
+.items__item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	aspect-ratio: 1;
+}
+.items__item:nth-child(4n + 1) {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+.items__item:nth-child(4n + 2) {
+	grid-column: span 2;
+}
+.items__item:nth-child(4n + 2) img {
+	aspect-ratio: 675 / 328;
+}
+@media (max-width: 725px) {
+	.items {
+		grid-template-columns: repeat(2, 1fr);
+	}
+} */
+/*
+.items {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 20px;
+}
+.items img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	aspect-ratio: 1;
+}
+.items__body {
+	display: flex;
+	flex-grow: 1;
+	flex-wrap: wrap;
+	gap: 20px;
+	flex-basis: 340px;
+}
+.items__big {
+	flex-grow: 1;
+	flex-basis: 340px;
+}
+.items__middle {
+	flex-grow: 1;
+	flex-basis: 100%;
+}
+.items__middle img {
+	aspect-ratio: 675 / 328;
+}
+.items__item {
+	flex-basis: 10px;
+	flex-grow: 1;
+}*/
+
+/*
+.some {
+	grid-template-columns: repeat(auto-fill, minmax(min(444px, 100%), 1fr));
+}
+*/
+
+/* -------------------------------------------------------------------------- */
+/* Layout helpers */
+
+.header__container,
+.footer__container,
+.page__container {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding-inline: 15px;
+}
+
+.page {
+	padding-block: 60px 80px;
+}
+
+.section-title {
+	font-family: "Playfair Display", serif;
+	font-size: 24px;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	margin-bottom: 32px;
+}
+
+.section-title--center {
+	text-align: center;
+}
+
+/* Intro cards -------------------------------------------------------------- */
+
+/* Верхні три банери */
+.banner-row {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	margin: 40px 0 60px;
+}
+
+.banner-row__img {
+	height: 320px; /* більші банери зверху сайту */
+	width: auto;
+}
+
+@media (max-width: 768px) {
+	.banner-row {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.intro {
+	margin-bottom: 80px;
+}
+
+.intro__grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 30px;
+}
+
+.intro__grid--banners-only .intro-banner {
+	flex: 0 1 320px;
+}
+
+.intro__grid--banners-only .intro-banner img {
+	width: 100%;
+	display: block;
+}
+
+.intro-card {
+	background-color: #ffffff;
+	display: grid;
+	grid-template-rows: auto 1fr;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.intro-card__image img {
+	width: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+.intro-card__content {
+	padding: 24px 24px 28px;
+}
+
+.intro-card__eyebrow {
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: #333;
+	margin-bottom: 10px;
+}
+
+.intro-card__title {
+	font-size: 13px;
+	text-transform: none;
+	color: #777;
+	margin-bottom: 10px;
+}
+
+.intro-card__text {
+	font-size: 13px;
+	color: #777;
+	margin-bottom: 24px;
+}
+
+.intro-card__link {
+	font-size: 12px;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #1b1b1d;
+}
+
+.intro-card__link:hover {
+	text-decoration: underline;
+}
+
+/* Section: Trusted by ------------------------------------------------------ */
+
+.trusted {
+	margin-bottom: 72px;
+}
+
+.trusted__image {
+	max-width: 620px;
+	margin: 0 auto;
+}
+
+.trusted__image img {
+	width: 100%;
+	display: block;
+}
+
+/* Section: Products -------------------------------------------------------- */
+
+.products {
+	margin-bottom: 80px;
+}
+
+.products__header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	row-gap: 16px;
+}
+
+.products__filter {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+.products__filter-btn {
+	border: none;
+	background: transparent;
+	padding: 4px 0;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	color: #777;
+	cursor: pointer;
+}
+
+.products__filter-btn--active {
+	color: #1b1b1d;
+	border-bottom: 2px solid #1b1b1d;
+}
+
+/* 3x2 сітка тільки з картинками товарів */
+.products__grid {
+	margin-top: 10px;
+	display: grid;
+	grid-template-columns: repeat(3, auto); /* ширина дорівнює ширині картинок */
+	justify-content: center;               /* усі три колонки по центру контейнера */
+	column-gap: 12px;                      /* невеликий проміжок між картинками */
+	row-gap: 12px;
+}
+
+.product-card {
+	background-color: transparent;
+	display: flex;
+	justify-content: center;  /* картинка по центру осередку */
+}
+
+.product-card__image img {
+	width: 90%;         /* трохи ширші для 2x висоти */
+	margin: 0 auto;     /* по центру всередині комірки */
+	display: block;
+	height: 260px;      /* приблизно 2x поточного розміру (130px) */
+	object-fit: contain;
+}
+
+@media (max-width: 900px) {
+	.products__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px) {
+	.products__grid {
+		grid-template-columns: 1fr;
+	}
+}
+}
+
+/* Section: Benefits -------------------------------------------------------- */
+
+.benefits {
+	margin-bottom: 40px;
+}
+
+.benefits__grid {
+	display: grid;
+	gap: 20px 30px;
+	grid-template-columns: repeat(3, minmax(120px, 1fr)); /* 3 зверху, 3 знизу */
+	justify-items: center;
+}
+
+.benefit-card__icon {
+	max-width: 180px; /* приблизно у 1.3 рази більші */
+	display: block;
+}
+
+/* Responsive tweaks -------------------------------------------------------- */
+
+@media (max-width: 768px) {
+	.page {
+		padding-block: 40px 60px;
+	}
+
+	.products__header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+@media (max-width: 480px) {
+	.section-title {
+		font-size: 20px;
+	}
+
+	.intro-card__content,
+	.product-card__info {
+		padding-inline: 16px;
+	}
+}

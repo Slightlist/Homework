@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- Ukraine - uk -->
+<!-- Мова не визначена - zxx -->
+<!-- Коди мов https://html-css.co.ua/html/lang-kodu-mov/ -->
+<html lang="en">
+	<head>
+		<!-- Кодування тексту -->
+		<meta charset="UTF-8">
+		<!-- Налаштування в'юпорту (адаптиву, масштабу тощо) -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Підключення шрифтів -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Playfair%20Display:wght@400&display=swap" rel="stylesheet">
+		<!--Підключення окремого файлу стилів -->
+		<link rel="stylesheet" href="css/style.css">
+		<!-- Заголовок сторінки в браузері (вкладці) -->
+		<title>Homework 17 - Grid layout</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="header__container">
+
+				</div>
+			</header>
+			<main class="page">
+				<div class="page__container">
+					<!-- Домашнє завдання:
+					1. Повторити теорію по Grid за шпаргалкою https://fls.guru/grid.html
+					2. Переглянути відео-урок https://www.youtube.com/watch?v=faf0_iMbuXs
+					3. За допомогою Grid-Layout зверстати частину макету Furniture (секції Trusted by, Featured products, Why choose us?) та зробити адаптив під різні екрани. -->
+
+					<!-- Тимчасово: простий вивід трьох банерів, керуємо розміром через CSS -->
+					<div class="banner-row">
+						<img class="banner-row__img" src="img/Banner.png" alt="Hanging light banner">
+						<img class="banner-row__img" src="img/BannerSofa.png" alt="Sofa banner">
+						<img class="banner-row__img" src="img/BannerChair.png" alt="Chair banner">
+					</div>
+
+					<section class="trusted">
+						<div class="section-title section-title--center">
+							<img src="img/TextTrusted by.png" alt="Trusted by">
+						</div>
+						<div class="trusted__image" aria-hidden="true">
+							<img src="img/FeatureLogos.png" alt="Brand logos">
+						</div>
+					</section>
+
+					<section class="products">
+						<header class="products__header">
+							<div class="section-title">
+								<img src="img/Titlefeatured products.png" alt="Featured products">
+							</div>
+							<nav class="products__filter" aria-label="Filter products">
+								<button class="products__filter-btn products__filter-btn--active" type="button">All</button>
+								<button class="products__filter-btn" type="button">On sale</button>
+								<button class="products__filter-btn" type="button">Sofa</button>
+								<button class="products__filter-btn" type="button">Hanging light</button>
+							</nav>
+						</header>
+
+						<div class="products__grid">
+							<article class="product-card">
+								<a href="#" class="product-card__image">
+									<img src="img/Lhigh chair.png" alt="Urban luxury high chair">
+								</a>
+							</article>
+
+							<article class="product-card">
+								<a href="#" class="product-card__image">
+									<img src="img/Lmodern light.png" alt="Modern black hanging light">
+								</a>
+							</article>
+
+							<article class="product-card">
+								<a href="#" class="product-card__image">
+									<img src="img/Lfusion table.png" alt="Metro fusion table">
+								</a>
+							</article>
+
+							<article class="product-card">
+								<a href="#" class="product-card__image">
+									<img src="img/Ldesk lamp.png" alt="Luxurious desk lamp">
+								</a>
+							</article>
+
+							<article class="product-card">
+								<a href="#" class="product-card__image">
+									<img src="img/Lhaging clock.png" alt="Timeless edge hanging clock">
+								</a>
+							</article>
+
+							<article class="product-card">
+								<a href="#" class="product-card__image">
+									<img src="img/Lpendant light.png" alt="Zenith pendant light">
+								</a>
+							</article>
+						</div>
+					</section>
+
+					<section class="benefits">
+						<div class="section-title section-title--center">
+							<img src="img/Textwhy us.png" alt="Why choose us?">
+						</div>
+						<div class="benefits__grid">
+							<article class="benefit-card">
+								<img class="benefit-card__icon" src="img/Featuredelivery.png" alt="Delivery icon">
+							</article>
+							<article class="benefit-card">
+								<img class="benefit-card__icon" src="img/Featurefreeshipping.png" alt="Free shipping icon">
+							</article>
+							<article class="benefit-card">
+								<img class="benefit-card__icon" src="img/Featuresopport logo.png" alt="Support icon">
+							</article>
+							<article class="benefit-card">
+								<img class="benefit-card__icon" src="img/Featureemail.png" alt="Email icon">
+							</article>
+							<article class="benefit-card">
+								<img class="benefit-card__icon" src="img/Featurepayment.png" alt="Payment icon">
+							</article>
+							<article class="benefit-card">
+								<img class="benefit-card__icon" src="img/Featurevoucher.png" alt="Voucher icon">
+							</article>
+						</div>
+					</section>
+
+				</div>
+			</main>
+			<footer class="footer">
+				<div class="footer__container">
+
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
