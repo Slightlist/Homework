@@ -1,0 +1,19 @@
+.base-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 26px;
+	border-radius: 999px;
+	border: none;
+	background-color: var(--accent);
+	color: #fff;
+	font-size: 13px;
+	font-weight: 500;
+	text-transform: none;
+	transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.base-button:hover {
+	background-color: var(--accent-dark);
+	transform: translateY(-1px);
+}

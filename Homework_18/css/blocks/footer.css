@@ -1,0 +1,14 @@
+.footer {
+	padding-block: 40px 50px;
+}
+
+.footer__container {
+	border-top: 1px solid var(--border-soft);
+	padding-top: 24px;
+}
+
+.footer__copy {
+	font-size: 12px;
+	text-align: center;
+	color: var(--text-muted);
+}

@@ -1,0 +1,437 @@
+/* Скидання стилів */
+@import url("reset.css");
+
+/* Локальні шрифти (якщо є) */
+@import url("fonts.css");
+
+:root {
+    --bg-page: #fef8f3;
+    --bg-block: #ffffff;
+    --accent: #c9a07a;
+    --accent-dark: #b28355;
+    --text-main: #4b3c33;
+    --text-muted: #7a6b61;
+    --border-soft: #f0e3d7;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+[class*="__container"] {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-inline: 15px;
+}
+
+.base-title {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    color: var(--text-main);
+    letter-spacing: 0.02em;
+}
+
+.decoration-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-main);
+}
+
+.decoration-link::before {
+    content: "";
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--accent);
+}
+
+.base-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 28px;
+    border-radius: 999px;
+    border: none;
+    background-color: var(--accent);
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.base-button:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+/* Header */
+.header {
+    padding-block: 24px 26px;
+    background-color: transparent;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+}
+
+.logo,
+.header__logo {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    color: var(--text-main);
+}
+
+.header__nav {
+    margin-left: auto;
+}
+
+.header__list {
+    display: flex;
+    column-gap: 26px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.header__link {
+    position: relative;
+    padding-block: 4px;
+}
+
+.header__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent);
+    transition: width 0.2s ease;
+}
+
+.header__link:hover::after {
+    width: 100%;
+}
+
+.header__btn {
+    margin-left: 32px;
+    font-size: 13px;
+}
+
+/* Hero */
+.hero {
+    padding-block: 36px 80px;
+}
+
+.hero__container {
+    max-width: 1140px;
+}
+
+.hero__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+}
+
+.hero__block {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    column-gap: 60px;
+    align-items: center;
+    background-color: var(--bg-block);
+    border-radius: 24px;
+    padding: 40px 48px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.04);
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+}
+
+.hero__title {
+    font-size: 32px;
+    line-height: 1.3;
+}
+
+.hero__subtitle {
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+.hero__text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 490px;
+}
+
+.hero__note {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.hero__note-link {
+    color: var(--accent-dark);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+.hero__read-more {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-dark);
+}
+
+.hero__image-wrapper {
+    justify-self: end;
+    max-width: 360px;
+}
+
+.hero__image {
+    display: block;
+    width: 100%;
+    border-radius: 24px;
+    object-fit: cover;
+}
+
+/* Lessons */
+.lessons {
+    padding-block: 20px 80px;
+}
+
+.lessons__header {
+    max-width: 650px;
+    margin-bottom: 32px;
+}
+
+.lessons__title {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.lessons__text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.lessons__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 26px;
+    row-gap: 26px;
+}
+
+.lessons__card {
+    background-color: var(--bg-block);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lessons__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
+}
+
+.lessons__image-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.lessons__image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.lessons__caption {
+    padding: 16px 18px 20px;
+    font-size: 14px;
+    text-align: center;
+    color: var(--text-main);
+}
+
+/* Schedule */
+.schedule {
+    padding-block: 10px 100px 90px;
+}
+
+.schedule__header {
+    max-width: 650px;
+    margin-bottom: 32px;
+}
+
+.schedule__title {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.schedule__text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+.schedule__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    column-gap: 50px;
+    align-items: center;
+}
+
+.schedule__table-wrapper {
+    background-color: var(--bg-block);
+    border-radius: 24px;
+    padding: 24px 26px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.03);
+    overflow-x: auto;
+}
+
+.schedule__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.schedule__table-heading {
+    padding: 10px 0 12px;
+    border-bottom: 1px solid var(--border-soft);
+    font-weight: 500;
+    color: var(--text-main);
+    text-align: left;
+}
+
+.schedule__table-row:nth-child(even) .schedule__table-cell {
+    background-color: #fcf3ea;
+}
+
+.schedule__table-cell {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-soft);
+    color: var(--text-muted);
+}
+
+.schedule__table-link {
+    color: var(--accent-dark);
+}
+
+.schedule__picture {
+    max-width: 360px;
+    justify-self: end;
+}
+
+.schedule__image {
+    width: 100%;
+    border-radius: 24px;
+    object-fit: cover;
+}
+
+/* Footer */
+.footer {
+    padding-block: 28px 34px;
+    border-top: 1px solid var(--border-soft);
+    background-color: var(--bg-page);
+}
+
+.footer__copy {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Адаптив */
+@media (max-width: 960px) {
+    .header__container {
+        column-gap: 20px;
+    }
+
+    .header__list {
+        column-gap: 18px;
+        font-size: 13px;
+    }
+
+    .hero__block {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 28px;
+    }
+
+    .hero__image-wrapper {
+        justify-self: stretch;
+        max-width: 100%;
+    }
+
+    .schedule__content {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 32px;
+    }
+
+    .schedule__picture {
+        justify-self: stretch;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .header__nav {
+        display: none;
+    }
+
+    .header__btn {
+        margin-left: auto;
+    }
+
+    .hero {
+        padding-block: 32px 52px;
+    }
+
+    .lessons__list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .lessons__image {
+        height: 220px;
+    }
+
+    .schedule {
+        padding-bottom: 60px;
+    }
+}

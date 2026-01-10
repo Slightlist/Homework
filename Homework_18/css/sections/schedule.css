@@ -1,0 +1,114 @@
+.schedule {
+	padding-block: 10px 90px;
+}
+
+.schedule__header {
+	max-width: 620px;
+	margin-bottom: 32px;
+}
+
+.schedule__title {
+	color: #ba936f;
+	font-size: 50px;
+	font-style: normal;
+	margin-top: 0;
+	text-align: left;
+	font-family: "Lora", serif;
+	font-weight: 400;
+	line-height: normal;
+	margin-bottom: 0;
+	letter-spacing: 0;
+	text-transform: uppercase;
+	width: 100%;
+	max-width: 687px;
+	min-height: 182px;
+}
+
+.schedule__text {
+	max-width: 638px;
+}
+
+.schedule__text p {
+	color: #343434;
+	font-size: 19px;
+	font-style: normal;
+	margin-top: 0;
+	text-align: left;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	line-height: 27px;
+	margin-bottom: 0;
+	letter-spacing: 0;
+	text-transform: none;
+	width: 100%;
+	max-width: 638px;
+	min-height: auto;
+}
+
+.schedule__content {
+	display: grid;
+	grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+	column-gap: 60px;
+	align-items: center;
+}
+
+.schedule__table-wrapper {
+	border-radius: 26px;
+	background-color: var(--bg-block);
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+	overflow-x: auto;
+}
+
+.schedule__table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 19px;
+	font-family: "Montserrat", sans-serif;
+	color: #343434;
+	line-height: 27px;
+}
+
+.schedule__table-heading {
+	padding: 14px 22px;
+	text-align: left;
+	border-bottom: 1px solid var(--border-soft);
+	font-weight: 400;
+}
+
+.schedule__table-cell {
+	padding: 12px 22px;
+	border-bottom: 1px solid var(--border-soft);
+	color: #343434;
+	font-weight: 400;
+}
+
+.schedule__table-row:last-child .schedule__table-cell {
+	border-bottom: none;
+}
+
+.schedule__table-link {
+	color: var(--accent-dark);
+}
+
+.schedule__picture {
+	justify-self: end;
+	max-width: 340px;
+}
+
+.schedule__image {
+	width: 100%;
+	border-radius: 26px;
+	object-fit: cover;
+}
+
+@media (max-width: 900px) {
+	.schedule__content {
+		grid-template-columns: minmax(0, 1fr);
+		row-gap: 28px;
+	}
+
+	.schedule__picture {
+		max-width: 100%;
+		justify-self: stretch;
+	}
+}

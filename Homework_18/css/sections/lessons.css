@@ -1,0 +1,82 @@
+.lessons {
+	padding-block: 10px 80px;
+}
+
+.lessons__header {
+	max-width: 620px;
+	margin-bottom: 32px;
+}
+
+.lessons__title {
+	color: #ba936f;
+	font-size: 50px;
+	font-style: normal;
+	margin-top: 0;
+	text-align: left;
+	font-family: "Lora", serif;
+	font-weight: 400;
+	line-height: normal;
+	margin-bottom: 0;
+	letter-spacing: 0;
+	text-transform: uppercase;
+	width: 100%;
+	max-width: 687px;
+	min-height: 182px;
+}
+
+.lessons__text {
+	max-width: 638px;
+}
+
+.lessons__text p {
+	color: #343434;
+	font-size: 19px;
+	font-style: normal;
+	margin-top: 0;
+	text-align: left;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	line-height: 27px;
+	margin-bottom: 0;
+	letter-spacing: 0;
+	text-transform: none;
+	width: 100%;
+	max-width: 638px;
+	min-height: auto;
+}
+
+.lessons__list {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	column-gap: 26px;
+}
+
+.lessons__card {
+	background-color: var(--bg-block);
+	border-radius: 26px;
+	overflow: hidden;
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+.lessons__image {
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+}
+
+.lessons__caption {
+	padding: 16px 20px 20px;
+	font-size: 13px;
+	text-align: center;
+}
+
+@media (max-width: 900px) {
+	.lessons__list {
+		grid-template-columns: minmax(0, 1fr);
+		row-gap: 24px;
+	}
+
+	.lessons__image {
+		height: 220px;
+	}
+}

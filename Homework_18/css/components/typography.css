@@ -1,0 +1,12 @@
+.base-title {
+	font-family: "Playfair Display", serif;
+	font-weight: 600;
+	color: var(--text-main);
+	letter-spacing: 0.02em;
+}
+
+p {
+	font-size: 14px;
+	line-height: 1.6;
+	color: var(--text-muted);
+}
