@@ -1,0 +1,756 @@
+/* Підключення шрифтів */
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"); */
+
+/* Локальне підключення шрифтів */
+@import url("fonts.css");
+
+/* Скидання стилів */
+@import url("reset.css");
+
+/* Основні стилі */
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: #333;
+	background-color: #ffffff; /* вся сторінка біла, на весь екран */
+	font-size: 1rem; /* 16px */
+}
+
+.wrapper {
+	overflow: clip;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	margin: 0;
+	background-color: #ffffff;
+}
+
+.wrapper > main {
+	flex-grow: 1;
+}
+
+[class*="__container"] {
+	max-width: 70rem;
+	margin: 0 auto;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
+
+/* Hero контейнер на всю ширину, щоб картинка тягнулась по всьому екрану */
+.hero__container {
+	max-width: 100%;
+	margin: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+[class*="--margin"] {
+	margin-bottom: 20px;
+}
+/* ----------------------- */
+.page {
+	padding: 0;
+}
+/* ----------------------- */
+
+/*
+ Відності одиниці
+ %
+ Ш.Б.Е. - ширина батьківського елементу
+ В.Б.Е. - висота батьківського елементу
+*/
+.test {
+	/* Від Ш.Б.Е. */
+	width: 20%;
+	max-width: 20%;
+	min-width: 20%;
+	inline-size: 20%;
+	min-inline-size: 20%;
+	max-inline-size: 20%;
+	padding: 20%;
+	padding-inline: 20%;
+	padding-block: 20%;
+	margin: 20%;
+	margin-inline: 20%;
+	margin-block: 20%;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	inset-inline: 50%;
+
+	/* Від В.Б.Е. */
+	height: 20%;
+	max-height: 20%;
+	min-height: 20%;
+	max-block-size: 20%;
+	min-block-size: 20%;
+
+	/* !! Але батьківський елемент має мати вказану висоту. */
+	position: relative;
+	bottom: 20%;
+	top: 20%;
+	inset-block: 50%;
+
+	/* Від в'юпорта (вікно браузера) */
+
+	/* Від ширини */
+	position: fixed;
+	left: 20%;
+	right: 20%;
+	inset-inline: 20%;
+
+	/* Від висоти */
+	position: fixed;
+	top: 20%;
+	bottom: 20%;
+	inset-block: 20%;
+
+	/* Від батьківського елементу, у якого position відмінний від static */
+
+	/* Від ширини */
+	position: absolute;
+	left: 20%;
+	right: 20%;
+	inset-inline: 20%;
+
+	/* Від висоти */
+	position: absolute;
+	top: 20%;
+	bottom: 20%;
+	inset-block: 20%;
+
+	/* Від розміру шрифту за замовченням, поточного або успатковоного */
+	font-size: 120%;
+	line-height: 120%;
+
+	/* Від розмірів самого елементу */
+	transform: translate(20%, 30%);
+
+	/* translate: ... */
+}
+
+/* REM */
+/* Відносно розміру шрифту за замовченням */
+/* 1rem = 16px (розміру шрифту за замовченням) */
+.rem-test {
+	width: 2rem; /* (32px) */
+}
+
+/* EM */
+/* Відносно поточного, шрифту за замовченням або успаткованого розміру шрифту */
+.em-test {
+	font-size: 1.25rem; /* (20px) */
+	inline-size: 1em; /* (20px) */
+	block-size: 50px;
+	background-color: #7a956b;
+}
+
+/* 1. Коли треба прив'язатись до поточного або успаткованого розміру шрифту */
+.title {
+	font-size: 1.25rem;
+	line-height: 1.25;
+	margin-bottom: 0.75em;
+}
+
+/* Коли ми використовуємо EM ? */
+/* 2. у @media */
+
+@media (max-width: 50em) {
+	/* 800/16 */
+	.title {
+		font-size: 1rem;
+	}
+}
+
+/* В усіх інших випадках використовуються REM */
+
+/* 
+ Одиниці в'юпорту
+ VW - відносно ширини
+ VH - відносно висоти
+ VMAX - більший розмір
+ VMIN - меньший розмір
+ SVH, LVH, DVH
+ SVW, LVW, DVW
+*/
+/*
+.hero {
+	background-color: #7a956b;
+	height: 100svh;
+}
+*/
+/* Абсолютна одиниця */
+/* PX */
+/* 
+	Використовуємо тільки тоді, коли хочемо зафіксувати конкретний 
+	розмір який не від чого не залежить. 
+*/
+
+/* CALC */
+/* Дозволяє виконувати обчислення в CSS */
+/* включно між різними одиницями (+ або -) */
+
+.calc {
+	width: calc(100% - 1.25rem);
+	background-color: #77608d;
+}
+
+/* CLAMP */
+/* Встановлює межі знеачення властивості, а також проміжне значення */
+
+.clamp {
+	/* font-size: clamp(20px, 5vw, 48px); */
+}
+
+/* MIN, MAX */
+/* .minmax {
+	width: min(400px, 100%);
+	background-color: #794f45;
+	padding: 15px;
+} */
+
+/* Змінні в CSS */
+
+/* Об'ява глобальної змінної */
+:root {
+	--colorMain: #333;
+	--colorMain2: #666;
+	--colorDark: #2a2a2a;
+	--colorLight: #fff;
+}
+/* Використання глобальної змінної */
+.block {
+	color: var(--colorMain);
+}
+
+/* Об'ява і використання приватної змінної */
+.content {
+	--colorMain2: blue;
+	color: var(--colorMain2);
+}
+
+.text {
+	color: var(--colorMain2);
+}
+
+/* POINTER-EVENTS */
+/* Вимикає взаємодію з об'єктом */
+
+/* .pointer-events {
+	pointer-events: none;
+}
+
+@media (max-width: 50em) {
+	.pointer-events {
+		pointer-events: auto;
+	}
+} */
+
+/* CURSOR */
+/* Встановлює стиль курсору */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/cursor */
+/*
+body {
+	cursor: pointer;
+}
+*/
+
+/* Умова світла/темна тема */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme */
+
+/* Заборона виділення */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/user-select */
+
+/* inset(скорочення для top, right, bottom, left) */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/inset */
+.inset {
+	/* top right bottom left */
+	inset: 20px 10px 30px 5px;
+}
+
+/* Плавна прокрутка при target */
+html {
+	scroll-behavior: smooth;
+}
+/* 
+// Режим змішування
+// mix-blend-mode
+// https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode
+ */
+/*
+isolation: isolate;
+https://developer.mozilla.org/en-US/docs/Web/CSS/isolation
+*/
+
+/* Вертикальний текст */
+.vertical-text {
+	writing-mode: vertical-lr;
+	/* Розвертаємо літери за потреби */
+	/* text-orientation: upright; */
+
+	color: rgb(21, 219, 21);
+}
+
+/* Логічні властивості */
+.logical {
+	/* width -> inline-size */
+	/* height -> block-size */
+	/*
+		max-block-size: ;
+		max-inline-size: ;
+		min-block-size: ;
+		min-inline-size: ;
+	*/
+
+	/* padding-left -> padding-inline-start */
+	/* padding-right -> padding-inline-end */
+	/* padding-top -> padding-block-start */
+	/* padding-bottom -> padding-block-end */
+
+	/* padding: 10px 0 -> padding-block: 10px */
+	/* padding: 0 10px -> padding-inline: 10px */
+
+	/* border-left -> border-inline-start */
+	/* border-right -> border-inline-end */
+	/* border-top -> border-block-start */
+	/* border-bottom -> border-block-end */
+}
+
+/*  Дзеркальне відображення */
+.mirror {
+	transform: scale(-1, 1);
+}
+
+/*
+Медіа запити контейнера
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries
+*/
+/*
+.post {
+	container-type: inline-size;
+}
+.title {
+	font-size: 28px;
+}
+@container (min-width: 43.75em) {
+	.title {
+		font-size: 48px;
+	}
+}
+*/
+/* Сабгріди */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Subgrid */
+.subgrid {
+}
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.25rem;
+}
+.grid__item {
+	/* grid-column: span 3; */
+
+	/* Від першої до останьої лінії */
+	grid-column: 1 / -1;
+
+	display: grid;
+	grid-template-columns: subgrid;
+}
+.subgrid {
+	height: 200px;
+	background-color: #7a956b;
+}
+
+/* Дозволяє обрізати елементи */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path 
+	https://bennettfeely.com/clippy/
+*/
+
+.star {
+	background-color: yellow;
+	inline-size: 9.375rem;
+	block-size: 9.375rem;
+	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/*
+CSS властивість scroll-margin-top визначає верхнє поле області прив'язки прокручування, 
+яке використовується для прив'язки цього поля до порту прив'язки.
+Наприклад, якщо у нас є фіксований заголовок із класом .header і ми хочемо встановити 
+відступ при прокрутці до елемента з id, ми можемо використати такий код CSS:
+Приклад:
+Фіксовані заголовки та посилання переходу:
+https://codepen.io/chriscoyier/pen/GRJpopp 
+*/
+
+/* ==================== INFO BAO LAYOUT ==================== */
+
+/* Використання CSS змінних з уроку */
+:root {
+	--colorMain: #333;
+	--colorMain2: #666;
+	--colorDark: #2a2a2a;
+	--colorLight: #fff;
+}
+
+/* Header - точна структура з макету */
+.header {
+	position: absolute;           /* поверх картинки */
+	inset-block-start: 0;
+	inset-inline: 0;
+	background-color: transparent;
+	padding-block: 1.5rem;
+	z-index: 10;
+}
+
+.header__body {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-inline: 2rem;
+}
+
+/* Прибираємо текстовий логотип INFO BAO, залишаємо лише меню як на макеті */
+.header__logo {
+	display: none; /* ховаємо текстовий логотип INFO BAO в шапці */
+}
+
+.menu__list {
+	display: flex;
+	gap: 3rem;
+	padding-inline-start: 0;
+}
+
+/* Стилі з домашнього завдання для Home / About Us / Blogs / Cosmetics Info / Contact */
+.menu__list a {
+	color: #fff;
+	font-size: 12px;
+	font-style: normal;
+	font-family: "Playfair Display", serif;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: 0;
+	text-transform: none;
+	padding-block: 0.5em;
+}
+
+/* Hero Section - точна структура з макету */
+.hero {
+	position: relative;
+	background-color: transparent;
+	color: var(--colorLight);
+}
+
+.hero__content {
+	position: relative;
+}
+
+/* Banner-style hero image (like TV) with text on top */
+.hero__content {
+	position: relative;
+}
+
+.hero__bg {
+	display: block;
+	inline-size: 100%;
+	block-size: auto;
+}
+
+/* Text on top of image, to the right under the menu */
+.hero__body {
+	position: absolute;
+	top: 45%;
+	right: 8%;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	text-align: left;
+	max-inline-size: 26rem;
+}
+
+/* "About Cosmetics" */
+.hero__title {
+	color: #fff;
+	font-size: 47px;
+	font-style: normal;
+	margin-top: 0;
+	text-align: left;
+	font-family: "Playfair Display", serif;
+	font-weight: 400;
+	line-height: normal;
+	margin-bottom: 0;
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+/* "Learn more about other cosmetics with INFO BAO" */
+.hero__text {
+	color: #fff;
+	font-size: 14px;
+	font-style: normal;
+	margin-top: 0.75rem;
+	text-align: left;
+	font-family: "Playfair Display", serif;
+	font-weight: 400;
+	line-height: normal;
+	margin-bottom: 0;
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+/* Button - використання логічних властивостей, clamp, user-select */
+.button {
+	display: inline-block;
+	padding-inline: clamp(2.5rem, 5vw, 3.5rem);
+	padding-block: clamp(1rem, 2.5vw, 1.5rem);
+	border: 1px solid var(--colorLight);
+	color: var(--colorLight);
+	text-align: center;
+	inline-size: fit-content;
+	user-select: none;
+	font-size: clamp(1rem, 2vw, 1.25rem);
+	background-color: transparent;
+	transition: all 0.3s ease;
+}
+
+.button:hover {
+	background-color: var(--colorLight);
+	color: var(--colorDark);
+}
+
+/* Кнопки з картинками (PNG) для героя та блоку About */
+.hero__button,
+.about__button {
+	padding: 0;
+	border: none;
+	background: none;
+}
+
+.hero__button img,
+.about__button img {
+	display: block;
+	inline-size: 100%;
+	max-inline-size: 13rem;
+	height: auto;
+}
+
+.button--outline {
+	border-color: var(--colorMain);
+	color: var(--colorMain);
+	background-color: transparent;
+}
+
+.button--outline:hover {
+	background-color: var(--colorMain);
+	color: var(--colorLight);
+}
+
+/* About Section - точна структура з макету */
+.about {
+	padding-block: clamp(6rem, 15vw, 12rem);
+	background-color: var(--colorLight);
+}
+
+.about__heading,
+.cosmetics__heading {
+	font-size: clamp(2.5rem, 6vw, 4rem);
+	text-align: center;
+	margin-block-end: clamp(4rem, 8vw, 6rem);
+	font-weight: 600;
+	color: var(--colorMain);
+}
+
+.about__body {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: clamp(4rem, 10vw, 8rem);
+	align-items: start;
+}
+
+.about__content {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.about__subtitle {
+	font-size: clamp(1.5rem, 3vw, 2rem);
+	font-weight: 600;
+	margin-block-end: 1em;
+	color: var(--colorMain);
+}
+
+.about__text {
+	font-size: clamp(1rem, 2vw, 1.125rem);
+	line-height: 1.7;
+	color: var(--colorMain2);
+	margin-block-end: 2rem;
+}
+
+.about__text p {
+	margin-block-end: 1.5em;
+}
+
+.about__text p:last-child {
+	margin-block-end: 0;
+}
+
+.about__button {
+	margin-block-start: 1rem;
+	inline-size: fit-content;
+}
+
+.about__image {
+	position: relative;
+	inline-size: 100%;
+	block-size: 0;
+	padding-block-end: 125%;
+	overflow: hidden;
+}
+
+.about__image img {
+	position: absolute;
+	inset: 0;
+	inline-size: 100%;
+	block-size: 100%;
+	object-fit: cover;
+}
+
+/* Cosmetics Section - точна структура з макету */
+.cosmetics {
+	padding-block: clamp(5rem, 12vw, 10rem);
+	background-color: var(--colorLight);
+}
+
+
+.cosmetics__categories {
+	display: flex;
+	justify-content: center;
+	gap: clamp(2rem, 4vw, 3rem);
+	margin-block-end: clamp(4rem, 8vw, 6rem);
+	flex-wrap: wrap;
+}
+
+.cosmetics__category {
+	padding-inline: clamp(2rem, 4vw, 3rem);
+	padding-block: 1rem;
+	border: 1px solid var(--colorMain);
+	color: var(--colorMain);
+	font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+/* Grid з container queries та subgrid як в урокі */
+.cosmetics__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: clamp(1.5rem, 4vw, 2.5rem);
+	margin-block-end: clamp(4rem, 8vw, 6rem);
+	container-type: inline-size;
+}
+
+.grid__item {
+	grid-column: span 1;
+}
+
+.product {
+	display: flex;
+	flex-direction: column;
+}
+
+.product__image {
+	position: relative;
+	inline-size: 100%;
+	block-size: 0;
+	padding-block-end: 100%;
+	overflow: hidden;
+	margin-block-end: 1.5rem;
+}
+
+.product__image img {
+	position: absolute;
+	inset: 0;
+	inline-size: 100%;
+	block-size: 100%;
+	object-fit: cover;
+}
+
+.product__title {
+	font-size: clamp(1rem, 2vw, 1.125rem);
+	font-weight: 500;
+	line-height: 1.4;
+	color: var(--colorMain);
+	text-align: center;
+	margin: 0;
+}
+
+.cosmetics__button {
+	margin-inline: auto;
+	display: block;
+	inline-size: fit-content;
+}
+
+/* Footer - точна структура з макету */
+.footer {
+	background-color: var(--colorDark);
+	color: var(--colorLight);
+	padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+
+.footer__body {
+	text-align: left;
+}
+
+.footer__text {
+	font-size: clamp(1rem, 2vw, 1.25rem);
+	font-weight: 500;
+}
+
+/* Container Queries як в урокі */
+@container (min-width: 43.75em) {
+	.cosmetics__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@container (max-width: 43.75em) {
+	.cosmetics__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@container (max-width: 31.25em) {
+	.cosmetics__grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Media Queries з em як в урокі */
+@media (max-width: 50em) {
+	.hero__content {
+		grid-template-columns: 1fr;
+	}
+	
+	.about__body {
+		grid-template-columns: 1fr;
+	}
+	
+	.hero__image {
+		order: -1;
+	}
+}
+
+/* Scroll margin для якорних посилань */
+#about,
+#cosmetics,
+#blogs {
+	scroll-margin-top: 5rem;
+}
+
+/* Контейнери використовують стандартний стиль з __container */
+
+/* Використання min/max як в урокі */
+.hero__title {
+	font-size: clamp(2rem, 5vw, 3rem);
+}
